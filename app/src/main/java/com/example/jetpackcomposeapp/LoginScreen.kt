@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -33,13 +34,38 @@ fun LoginScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
 
         ) {
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                verticalAlignment = Alignment.Top,
+                horizontalArrangement = Arrangement.End
+            ) {
+                Text(
+                    text = "EN",
+                    modifier = Modifier.padding(end = 8.dp)
+                )
+
+                Switch(
+                    checked = false, // Default unchecked
+                    onCheckedChange = { /* Logic can be added later */ }
+                )
+
+                Text(
+                    text = "PL",
+                    modifier = Modifier.padding(start = 8.dp)
+                )
+            }
+            Spacer(modifier = Modifier.height(32.dp))
+
             Image(painter = painterResource(
                 id = R.drawable.login_img),
                 contentDescription = "Login Image",
                 modifier =  Modifier.size(200.dp))
 
 
-            Text(text = "Welcom Back", fontSize = 28.sp, fontWeight = FontWeight.Bold)
+            Text(text = "Welcom Back!", fontSize = 28.sp, fontWeight = FontWeight.Bold)
 
             Spacer(modifier = Modifier.height(4.dp))
 
@@ -97,15 +123,9 @@ fun LoginScreen() {
                         })
 
             }
-
-
-
-
-
         }
 
-
 }
 
 
-}
+
